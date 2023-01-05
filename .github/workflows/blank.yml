@@ -27,7 +27,7 @@ jobs:
         shell: bash
         run: echo "$SECRETS_CONTEXT"
         env:
-          SECRETS_CONTEXT: ${{ secrets.secrets }}
+          SECRETS_CONTEXT: ${{ secrets.GITHUB_TOKEN }}
       
       - name: show secrets
         run: |
