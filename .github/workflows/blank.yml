@@ -25,9 +25,6 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: view the secrets context
         shell: bash
-        run: echo "$SECRETS_CONTEXT"
+        run: echo "$SECRETS_CONTEXT[0]"
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
-          
-      - name: get context
-        run: echo "$GITHUB_CONTEXT"
