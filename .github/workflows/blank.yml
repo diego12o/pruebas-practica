@@ -23,11 +23,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: view the secrets context
-        shell: bash
-        run: echo "$SECRETS_CONTEXT"
-        env:
-          SECRETS_CONTEXT: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/labeler@v4
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
       
       - name: show secrets
         run: |
