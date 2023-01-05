@@ -28,3 +28,6 @@ jobs:
         run: echo "$SECRETS_CONTEXT"
         env:
           SECRETS_CONTEXT: ${{ toJson(secrets) }}
+          
+      - name: get context
+        run: echo "$GITHUB_CONTEXT"
