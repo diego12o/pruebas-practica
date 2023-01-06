@@ -6,7 +6,12 @@ name: learn-github-actions
   #  types:
    #   - closed
 on:
-  push
+  # Triggers the workflow on push or pull request events but only for the "main" branch
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
   
 jobs:
   if_merged:
